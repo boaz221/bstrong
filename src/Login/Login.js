@@ -24,19 +24,17 @@ export default class Login extends Component {
     render() {
         let {username, password, openSnackbar, snackbarMessage, snackbarIsError, redirectBack} = this.state;
 
+        if (redirectBack) {
+            return (<Redirect to={_.get(this.props, 'location.state.from') || "/"}/>)
+        }
+
         return (
             <div className="login page-container">
-                {
-                    redirectBack ?
-                        <Redirect to={_.get(this.props, 'location.state.from') || "/"}/>
-                        :
-                        <LoginForm passwordChange={(password) => this.setState({password})}
-                                   usernameChange={(username) => this.setState({username})}
-                                   login={(...args) => this.login(...args)}
-                                   username={username}
-                                   password={password}/>
-
-                }
+                <LoginForm passwordChange={(password) => this.setState({password})}
+                           usernameChange={(username) => this.setState({username})}
+                           login={(...args) => this.login(...args)}
+                           username={username}
+                           password={password}/>
 
                 <Snackbar
                     open={openSnackbar}
@@ -69,14 +67,15 @@ export default class Login extends Component {
         if (username && password) {
             try {
                 const loginResponse = await loginProxy.login(username, password);
-                if(loginResponse.ok){
+                if (loginResponse.ok) {
                     SessionService.setToken(loginResponse.token);
                     this.setState({openSnackbar: false, redirectBack: true});
-                }else{
+                } else {
                     this.triggerSnackbar("Wrong username or password!", true);
                 }
             }
             catch (err) {
+                console.error(err);
                 this.triggerSnackbar(err.message || err, true);
             }
         } else {

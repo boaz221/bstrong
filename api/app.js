@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const path = require("path");
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -8,10 +9,10 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
-app.use(apiRoutes);
+app.use("/api", apiRoutes);
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('./build'));
+    app.use(express.static(path.join(__dirname, "build")));
 }
 
 app.use((req, res, next) => {
