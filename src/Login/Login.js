@@ -6,7 +6,10 @@ import Snackbar from 'material-ui/Snackbar';
 import './Login.css';
 import loginStyle from './Login.css.js';
 import loginProxy from './Login.proxy.js';
-import LoginForm from '../LoginForm/LoginForm';
+import LoginForm from './LoginForm/LoginForm';
+import LoginSessionService from './LoginSession.service.js';
+
+const SessionService = new LoginSessionService();
 
 export default class Login extends Component {
     state = {
@@ -34,6 +37,7 @@ export default class Login extends Component {
                                    password={password}/>
 
                 }
+
                 <Snackbar
                     open={openSnackbar}
                     message={snackbarMessage}
@@ -66,6 +70,7 @@ export default class Login extends Component {
             try {
                 const loginResponse = await loginProxy.login(username, password);
                 if(loginResponse.ok){
+                    SessionService.setToken(loginResponse.token);
                     this.setState({openSnackbar: false, redirectBack: true});
                 }else{
                     this.triggerSnackbar("Wrong username or password!", true);

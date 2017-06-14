@@ -6,15 +6,18 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import './LoginForm.css';
-import logo from '../App/logo.png'
+import logo from '../../App/logo.png'
 import loginFormStyle from './LoginForm.css.js';
+import CommanderContent from "../CommanderContent/CommanderContent";
 
 function LoginForm(props) {
     const {username, password, login, usernameChange, passwordChange} = props;
+    const isUserSawCommanderContent = localStorage.getItem("sawCommanderContent");
 
     return (
         <form className="login-form-container" onSubmit={(event) => login(username, password, event) }>
             <img className="login-logo" src={logo} alt="logo"/>
+            <CommanderContent startOpen={!isUserSawCommanderContent}/>
 
             <Paper style={loginFormStyle.loginFormInputContainer} zDepth={2} rounded={false}>
                 <div className="login-input-field-container">
@@ -41,6 +44,9 @@ function LoginForm(props) {
             </Paper>
             <RaisedButton type="submit" label="Login" secondary={true} fullWidth={true}
                           onTouchTap={() => login(username, password)}/>
+            <div className="commander-warning-container">
+                <span className="login-warning-message">Remember! always keep the rules of the kabam</span>
+            </div>
         </form>
     );
 }

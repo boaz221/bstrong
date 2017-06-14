@@ -14,8 +14,8 @@ export default function AppRoutes() {
         <Router>
             <Switch className="app-routes-container">
                 <Route path="/login" component={Login}/>
-                <PrivateRoute path="/my-area" component={MyArea} authed={LoginSessionInstance.isUserLogged()}/>
-                <PrivateRoute component={Home} authed={LoginSessionInstance.isUserLogged()}/>
+                <PrivateRoute path="/my-area" component={MyArea} authFunction={() => LoginSessionInstance.isUserLogged()}/>
+                <PrivateRoute component={Home} authFunction={() => LoginSessionInstance.isUserLogged()}/>
             </Switch>
         </Router>
     );

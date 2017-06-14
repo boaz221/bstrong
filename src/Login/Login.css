@@ -22,7 +22,10 @@
 
 .login-logo{
     height: 150px;
-    margin-bottom: 50px;
     padding: 10px;
     border-radius: 500px;
+}
+
+.commander-content-container{
+    margin-bottom: 50px;
 }

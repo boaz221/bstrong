@@ -6,16 +6,16 @@ export default class LoginSession {
             return that;
         }
 
-        this.loggedSession = null;
+        this.loggedToken = null;
 
         that = this;
     }
 
-    setUser(user){
-        this.loggedSession = user;
+    setToken(token){
+        this.loggedToken = token;
     }
 
     isUserLogged(){
-        return !!this.loggedSession
+        return !!this.loggedToken
     }
 }
