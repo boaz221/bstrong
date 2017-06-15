@@ -1,12 +1,15 @@
 const _ = require('lodash');
 const path = require("path");
 const express = require('express');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const apiRoutes = require('./api.routes');
 
 const app = express();
 const port = process.env.PORT || 3001;
+
+mongoose.connect('mongodb://207.154.222.3/bstrong');
 
 app.use(bodyParser.json());
 app.use("/api", apiRoutes);

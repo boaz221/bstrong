@@ -4,7 +4,7 @@ import {Redirect,} from 'react-router-dom'
 
 import "./Navbar.css";
 import logo from '../App/logo.png'
-import navbarImage from './be-strong-suite.jpg'
+import navbarImage from '../App/be-strong-suite.jpg'
 
 export default class Navbar extends Component{
     state = {

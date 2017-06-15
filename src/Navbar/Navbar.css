@@ -19,10 +19,14 @@
 .navbar-line-container {
     display: flex;
     align-items: center;
-    width: 75%;
     padding: 10px 0;
+    width: 100%;
     background: #fff;
     justify-content: space-between;
+}
+
+.navbar-line-container > *{
+    margin: 0 10%;
 }
 
 .navbar-logo {

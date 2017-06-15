@@ -8,6 +8,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import './LoginForm.css';
 import logo from '../../App/logo.png'
 import loginFormStyle from './LoginForm.css.js';
+import suiteLogo from '../../App/be-strong-suite.jpg'
 import CommanderContent from "../CommanderContent/CommanderContent";
 
 function LoginForm(props) {
@@ -16,7 +17,10 @@ function LoginForm(props) {
 
     return (
         <form className="login-form-container" onSubmit={(event) => login(username, password, event) }>
-            <img className="login-logo" src={logo} alt="logo"/>
+            <div className="login-logo-container">
+                <img className="login-logo" src={logo} alt="logo"/>
+                <img className="login-suit-logo" src={suiteLogo} alt="logo"/>
+            </div>
             <CommanderContent startOpen={!isUserSawCommanderContent}/>
 
             <Paper style={loginFormStyle.loginFormInputContainer} zDepth={2} rounded={false}>

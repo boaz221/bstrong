@@ -1,4 +1,21 @@
 .article-preview-container{
     display: flex;
+    align-items: center;
     flex-direction: column;
+}
+
+.article-title{
+    font-size: 1.75em;
+    font-weight: 700;
+    margin-bottom: .85714em;
+}
+
+.article-title .title-index{
+    color: #b5b9bd;
+    font-weight: 700;
+}
+
+.article-preview{
+    height: 200px;
+    width: 200px;
 }

@@ -1,6 +1,6 @@
 export default {
     loginFormInputContainer:{
-        width: 300
+        width: "100%"
     },
     inputIcon: {
         marginRight: 10,
