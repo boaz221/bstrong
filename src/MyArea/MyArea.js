@@ -84,14 +84,14 @@ export default class MyArea extends Component {
         });
     }
 
-    async saveChanges(userData, sender){
+    async saveChanges({sender, userData}){
         if (sender) {
             sender.preventDefault();
         }
 
         try {
             await MyAreaProxy.setComment(userData.comment);
-            this.triggerSnackbar("Updated comment successfully!");
+            this.triggerSnackbar("Updated comment successfully!", false);
         }
         catch (err) {
             console.error(err);

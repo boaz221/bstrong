@@ -11,7 +11,7 @@ function MyAreaForm(props) {
     const {userData, saveChanges, userDataChange} = props;
 
     return (
-        <form className="user-data-form-container" onSubmit={(event) => saveChanges(userData, event) }>
+        <form className="user-data-form-container" onSubmit={(event) => saveChanges({userData, sender: event,})}>
             <Paper style={myAreaFormStyle.myAreaFormInputContainer} zDepth={2} rounded={false}>
                 <div className="comment-input-field-container">
                     <label htmlFor="comment" className="my-area-form-input-label">Comment:</label>
@@ -26,8 +26,7 @@ function MyAreaForm(props) {
                 </div>
             </Paper>
 
-            <RaisedButton type="submit" label="Save" secondary={true} fullWidth={true}
-                          onTouchTap={() => saveChanges(userData)}/>
+            <RaisedButton type="submit" label="Save" secondary={true} fullWidth={true}/>
         </form>
     );
 }
