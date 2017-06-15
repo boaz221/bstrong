@@ -5,6 +5,8 @@
 }
 
 .article-title{
+    max-width: 900px;
+    text-align: center;
     font-size: 1.75em;
     font-weight: 700;
     margin-bottom: .85714em;

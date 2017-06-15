@@ -1,12 +1,11 @@
+const loginStore = require('./login.store');
 const loginTokenService = require('./login-token.service');
 
 module.exports = {
     login
 };
 
-function login(username, password) {
-    if(username === "bla"){
-        return {ok: true, token: loginTokenService.encryptNewToken(username)};
-    }
-    return {ok: false};
+async function login(username, password) {
+    const loggedIn = await loginStore.login(username, password);
+    return loggedIn ? {ok: true, token: loginTokenService.encryptNewToken(username)} : {ok: false};
 }
