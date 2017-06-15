@@ -5,5 +5,5 @@ module.exports = {
 };
 
 function get() {
-    return articleModel.find();
+    return articleModel.find().lean().exec();
 }

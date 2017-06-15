@@ -2,20 +2,17 @@ const path = require("path");
 const express = require("express");
 
 const articlesController = require('./articles.controller');
-const loginTokenService = require('../login/login-token.service');
+const validateAuthorization = require('../validate-authorization.middleware.js');
 
 const router = express.Router();
 
+router.use(validateAuthorization);
 router.use('/assets', express.static(path.join(__dirname, "assets")));
 
-router.get('/', async (req, res, next) => {
-    const {authorization} = req.headers;
+router.get('/', getArticles);
 
-    if(!loginTokenService.validateToken(authorization)){
-        next(new Error("Not a valid authorization header"));
-    }else{
-        res.json(await articlesController.get());
-    }
-});
+async function getArticles(req, res, next){
+    res.json(await articlesController.get());
+}
 
 module.exports = router;

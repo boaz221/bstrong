@@ -5,7 +5,7 @@ module.exports = {
 };
 
 async function login(username, password) {
-    const existsUser = await usersModel.findOne({username, password});
+    const existsUser = await usersModel.findOne({username, password}).lean().exec();
 
     return !!existsUser;
 }

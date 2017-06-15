@@ -2,7 +2,9 @@ const router = require('express').Router();
 
 const loginController = require('./login.controller');
 
-router.post('/', async (req, res, next) => {
+router.post('/', login);
+
+async function login(req, res, next) {
    const {username, password} = req.body;
 
    if(!username || !password){
@@ -10,6 +12,6 @@ router.post('/', async (req, res, next) => {
    }else{
        res.json(await loginController.login(username, password));
    }
-});
+}
 
 module.exports = router;

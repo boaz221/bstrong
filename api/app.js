@@ -10,6 +10,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 mongoose.connect('mongodb://207.154.222.3/bstrong');
+mongoose.Promise = Promise;
 
 app.use(bodyParser.json());
 app.use("/api", apiRoutes);
