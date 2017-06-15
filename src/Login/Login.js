@@ -21,6 +21,14 @@ export default class Login extends Component {
         redirectBack: false
     };
 
+    componentDidMount(){
+        const redirectToLoginErr = _.get(this,'props.location.state.redirectToLoginErr');
+
+        if(redirectToLoginErr){
+            this.triggerSnackbar(redirectToLoginErr, true);
+        }
+    }
+
     render() {
         let {username, password, openSnackbar, snackbarMessage, snackbarIsError, redirectBack} = this.state;
 
