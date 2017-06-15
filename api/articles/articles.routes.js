@@ -6,8 +6,8 @@ const validateAuthorization = require('../validate-authorization.middleware.js')
 
 const router = express.Router();
 
-router.use(validateAuthorization);
 router.use('/assets', express.static(path.join(__dirname, "assets")));
+router.use(validateAuthorization);
 
 router.get('/', getArticles);
 

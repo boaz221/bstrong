@@ -1,13 +1,13 @@
 import _ from 'lodash';
 import Paper from 'material-ui/Paper';
 import React, {Component} from 'react';
-import {Redirect,} from 'react-router-dom'
+import {Redirect,} from 'react-router-dom';
 import LinearProgress from 'material-ui/LinearProgress';
 
 import './Home.css';
 import homeStyle from './Home.css.js';
 import Navbar from '../Navbar/Navbar';
-import ArticlesProvider from "./Articles.proxy";
+import ArticlesProxy from "./Articles.proxy";
 import ArticlePreview from "./ArticlePreview/ArticlePreview";
 import LoginSessionService from '../Login/LoginSession.service.js';
 
@@ -22,7 +22,7 @@ export default class Home extends Component {
 
     async componentDidMount() {
         try {
-            const articles = await ArticlesProvider.get();
+            const articles = await ArticlesProxy.get();
             this.setState({articles, loaded: true});
         }
         catch (err){

@@ -1,0 +1,24 @@
+.comment-input-field-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.my-area-form-input-label{
+    line-height: 0;
+    margin-right: 15px;
+}
+
+.my-area-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.user-data-form-container{
+    width: 50%;
+}
+
