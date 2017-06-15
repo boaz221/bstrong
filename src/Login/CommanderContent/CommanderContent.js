@@ -4,6 +4,8 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import commanderContentStyle from "./CommanderContent.css";
+
 class CommanderContent extends Component {
     state = {
         isOpen: false
@@ -18,7 +20,7 @@ class CommanderContent extends Component {
     render() {
         const actions = [
             <FlatButton
-                label="OK"
+                label="אישור"
                 primary={true}
                 onTouchTap={() => this.closeDialog()}
             />
@@ -26,16 +28,18 @@ class CommanderContent extends Component {
 
         return (
             <div className="commander-content-container">
-                <RaisedButton label="Commander Content" fullWidth={true}
+                <RaisedButton label="דבר המפקד" fullWidth={true}
                               onTouchTap={() => this.openDialog()}/>
                 <Dialog
-                    title="Commander Content"
+                    title="דבר המפקד"
                     actions={actions}
+                    actionsContainerStyle={commanderContentStyle.actions}
+                    style={commanderContentStyle.dialog}
                     modal={false}
                     open={this.state.isOpen}
                     onRequestClose={() => this.closeDialog()}
                 >
-                    Commander Content
+                    אני המפקד הכי טוב!
                 </Dialog>
             </div>
         );

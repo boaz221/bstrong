@@ -8,7 +8,8 @@
 
 .my-area-form-input-label{
     line-height: 0;
-    margin-right: 15px;
+    direction: rtl;
+    margin-left: 15px;
 }
 
 .my-area-form-container{

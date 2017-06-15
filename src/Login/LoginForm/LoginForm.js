@@ -27,7 +27,7 @@ function LoginForm(props) {
                 <div className="login-input-field-container">
                     <FontIcon className="material-icons" style={loginFormStyle.inputIcon}>account_circle</FontIcon>
                     <TextField
-                        hintText="Username"
+                        hintText="שם משתמש"
                         fullWidth={true}
                         underlineShow={false}
                         value={username}
@@ -37,7 +37,7 @@ function LoginForm(props) {
                 <div className="login-input-field-container">
                     <FontIcon className="material-icons" style={loginFormStyle.inputIcon}>lock</FontIcon>
                     <TextField
-                        hintText="Password"
+                        hintText="סיסמא"
                         type="password"
                         fullWidth={true}
                         underlineShow={false}
@@ -46,10 +46,10 @@ function LoginForm(props) {
                     />
                 </div>
             </Paper>
-            <RaisedButton type="submit" label="Login" secondary={true} fullWidth={true}
+            <RaisedButton type="submit" label="התחבר" secondary={true} fullWidth={true}
                           onTouchTap={() => login(username, password)}/>
             <div className="commander-warning-container">
-                <span className="login-warning-message">Remember! always keep the rules of the kabam</span>
+                <span className="login-warning-message">זכור! תמיד תעשה מה שהקבב אומר!</span>
             </div>
         </form>
     );

@@ -30,8 +30,8 @@ export default class Navbar extends Component{
                         <span className="navbar-logo-name">BStrong</span>
                     </div>
                     <div className="navbar-links-container">
-                        <span className="navbar-link" onClick={() => this.setState({redirectTo: "/"})}>Home</span>
-                        <span className="navbar-link" onClick={() => this.setState({redirectTo: "/my-area"})}>My Area</span>
+                        <span className="navbar-link" onClick={() => this.setState({redirectTo: "/"})}>בית</span>
+                        <span className="navbar-link" onClick={() => this.setState({redirectTo: "/my-area"})}>אזור אישי</span>
                     </div>
                 </div>
                 <div className="navbar-image-border">

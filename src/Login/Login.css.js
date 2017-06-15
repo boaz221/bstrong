@@ -1,8 +1,10 @@
 export default {
     snackbarIsError: {
-        backgroundColor: "rgb(227, 4, 4)"
+        backgroundColor: "rgb(227, 4, 4)",
+        direction: "rtl"
     },
     snackbarIsntError: {
-        backgroundColor: "green"
+        backgroundColor: "green",
+        direction: "rtl"
     }
 }

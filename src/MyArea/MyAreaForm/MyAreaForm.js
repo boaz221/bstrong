@@ -14,19 +14,20 @@ function MyAreaForm(props) {
         <form className="user-data-form-container" onSubmit={(event) => saveChanges({userData, sender: event,})}>
             <Paper style={myAreaFormStyle.myAreaFormInputContainer} zDepth={2} rounded={false}>
                 <div className="comment-input-field-container">
-                    <label htmlFor="comment" className="my-area-form-input-label">Comment:</label>
                     <TextField
                         id="comment"
                         fullWidth={true}
                         multiLine={true}
                         underlineShow={true}
                         value={userData.comment || ""}
+                        style={myAreaFormStyle.myAreaFormInput}
                         onChange={(event, comment) => {userData.comment = comment; userDataChange(userData)}}
                     />
+                    <label htmlFor="comment" className="my-area-form-input-label">תגובה:</label>
                 </div>
             </Paper>
 
-            <RaisedButton type="submit" label="Save" secondary={true} fullWidth={true}/>
+            <RaisedButton type="submit" label="שמור" secondary={true} fullWidth={true}/>
         </form>
     );
 }

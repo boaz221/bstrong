@@ -79,7 +79,7 @@ export default class Login extends Component {
                     SessionService.setToken(loginResponse.token);
                     this.setState({openSnackbar: false, redirectBack: true});
                 } else {
-                    this.triggerSnackbar("Wrong username or password!", true);
+                    this.triggerSnackbar("שם משתמש או סיסמא לא נכונים!", true);
                 }
             }
             catch (err) {
@@ -87,7 +87,7 @@ export default class Login extends Component {
                 this.triggerSnackbar(err.message || err, true);
             }
         } else {
-            this.triggerSnackbar("Username and password are required!", true);
+            this.triggerSnackbar("חובה להזין שם משתמש וסיסמא!", true);
         }
     }
 }

@@ -28,7 +28,7 @@ export default class Home extends Component {
         catch (err){
             if(err.message === "Not a valid authorization header"){
                 SessionService.removeLoggedUser();
-                this.setState({redirectToLoginErr: "Not a valid authorization header"})
+                this.setState({redirectToLoginErr: "נא להתחבר לאתר קודם!"})
             }else{
                 this.setState({articles: [], loaded: true});
             }
@@ -47,7 +47,7 @@ export default class Home extends Component {
                 <Navbar {...this.props}/>
                 <Paper className="articles-container-paper" zDepth={2} rounded={false} style={homeStyle.articlesContainerPaper}>
                     <div className="articles-container">
-                        <h2 className="articles-header">Articles To Help You Get To Know The Suit</h2>
+                        <h2 className="articles-header">כתבות להכרות עם החליפה</h2>
                         {
                             loaded ?
                                 _.map(articles, (article, index) => <ArticlePreview key={index} index={++index}

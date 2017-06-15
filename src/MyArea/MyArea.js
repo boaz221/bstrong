@@ -30,7 +30,7 @@ export default class MyArea extends Component {
         catch (err) {
             if (err.message === "Not a valid authorization header") {
                 SessionService.removeLoggedUser();
-                this.setState({redirectToLoginErr: "Not a valid authorization header"})
+                this.setState({redirectToLoginErr: "נא להתחבר לאתר קודם!"})
             } else {
                 this.setState({userData: {}, loaded: true});
             }
@@ -49,7 +49,7 @@ export default class MyArea extends Component {
                 <Navbar {...this.props}/>
 
                 <div className="my-area-container">
-                    <h2 className="my-area-header">My Area</h2>
+                    <h2 className="my-area-header">אזור אישי</h2>
                     {
                         loaded ?
                             <MyAreaForm
@@ -64,7 +64,7 @@ export default class MyArea extends Component {
                         open={openSnackbar}
                         message={snackbarMessage}
                         bodyStyle={snackbarIsError ? myAreaStyle.snackbarIsError : myAreaStyle.snackbarIsntError}
-                        autoHideDuration={100000}
+                        autoHideDuration={1000}
                         onRequestClose={(reason) => this.handleSnackbarRequestClose(reason)}
                     />
                 </div>
@@ -91,11 +91,11 @@ export default class MyArea extends Component {
 
         try {
             await MyAreaProxy.setComment(userData.comment);
-            this.triggerSnackbar("Updated comment successfully!", false);
+            this.triggerSnackbar("התגובה התעדכנה בהצלחה!", false);
         }
         catch (err) {
             console.error(err);
-            this.triggerSnackbar("Error on updating the comment", true);
+            this.triggerSnackbar("שגיאה בעדכון תגובה!", true);
         }
     }
 }
