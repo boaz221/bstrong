@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use("/api", apiRoutes);
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, "build")));
+    app.use(express.static(path.join(__dirname, "..", "build")));
 }
 
 app.use((req, res, next) => {
