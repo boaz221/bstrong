@@ -9,6 +9,7 @@
     "install": "^0.10.1",
     "jsonwebtoken": "^7.4.1",
     "lodash": "^4.17.4",
+    "lru-cache": "^4.1.1",
     "material-ui": "^0.18.1",
     "mongoose": "^4.10.6",
     "npm": "^5.0.3",
@@ -17,7 +18,8 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
-    "react-tap-event-plugin": "^2.0.1"
+    "react-tap-event-plugin": "^2.0.1",
+    "which": "^1.2.14"
   },
   "devDependencies": {
     "concurrently": "^3.4.0",
@@ -28,7 +30,7 @@
     "build": "react-scripts build",
     "server": "node ./api/app.js",
     "start-dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start": "cross-env NODE_ENV=production npm run server",
+    "start": "cross-env NODE_ENV=production PORT=80 npm run server",
     "postinstall": "npm run build"
   },
   "proxy": "http://localhost:3001"

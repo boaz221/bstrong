@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const apiRoutes = require('./api.routes');
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3002;
 
 mongoose.connect('mongodb://207.154.222.3/bstrong');
 mongoose.Promise = Promise;
