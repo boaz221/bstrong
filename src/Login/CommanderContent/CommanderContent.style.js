@@ -1,6 +1,9 @@
 export default {
     dialog:{
-        direction: "rtl"
+        direction: "rtl",
+    },
+    body:{
+        overflowY: "auto"
     },
     actions:{
         direction: "rtl",

@@ -49,7 +49,7 @@ function LoginForm(props) {
             <RaisedButton type="submit" label="התחבר" secondary={true} fullWidth={true}
                           onTouchTap={() => login(username, password)}/>
             <div className="commander-warning-container">
-                <span className="login-warning-message">זכור! תמיד תעשה מה שהקבב אומר!</span>
+                <span className="login-warning-message">זכור! נא לפעול לי הוראות בטחון שדה!</span>
             </div>
         </form>
     );
