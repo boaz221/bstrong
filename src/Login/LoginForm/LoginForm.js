@@ -6,9 +6,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import './LoginForm.css';
-import logo from '../../App/logo.png'
 import loginFormStyle from './LoginForm.css.js';
-import suiteLogo from '../../App/be-strong-suite.jpg'
 import CommanderContent from "../CommanderContent/CommanderContent";
 
 function LoginForm(props) {
@@ -17,37 +15,35 @@ function LoginForm(props) {
 
     return (
         <form className="login-form-container" onSubmit={(event) => login(username, password, event) }>
-            <div className="login-logo-container">
-                <img className="login-logo" src={logo} alt="logo"/>
-                <img className="login-suit-logo" src={suiteLogo} alt="logo"/>
-            </div>
             <CommanderContent startOpen={!isUserSawCommanderContent}/>
 
-            <Paper style={loginFormStyle.loginFormInputContainer} zDepth={2} rounded={false}>
-                <div className="login-input-field-container">
-                    <FontIcon className="material-icons" style={loginFormStyle.inputIcon}>account_circle</FontIcon>
-                    <TextField
-                        hintText="שם משתמש"
-                        fullWidth={true}
-                        underlineShow={false}
-                        value={username}
-                        onChange={(event, username) => usernameChange(username)}
-                    />
-                </div>
-                <div className="login-input-field-container">
-                    <FontIcon className="material-icons" style={loginFormStyle.inputIcon}>lock</FontIcon>
-                    <TextField
-                        hintText="סיסמא"
-                        type="password"
-                        fullWidth={true}
-                        underlineShow={false}
-                        value={password}
-                        onChange={(event, password) => passwordChange(password)}
-                    />
-                </div>
-            </Paper>
-            <RaisedButton type="submit" label="התחבר" secondary={true} fullWidth={true}
-                          onTouchTap={() => login(username, password)}/>
+            <div className="inputs-and-buttons-container">
+                <Paper style={loginFormStyle.loginFormInputContainer} zDepth={2} rounded={false}>
+                    <div className="login-input-field-container">
+                        <FontIcon className="material-icons" style={loginFormStyle.inputIcon}>account_circle</FontIcon>
+                        <TextField
+                            hintText="שם משתמש"
+                            fullWidth={true}
+                            underlineShow={false}
+                            value={username}
+                            onChange={(event, username) => usernameChange(username)}
+                        />
+                    </div>
+                    <div className="login-input-field-container">
+                        <FontIcon className="material-icons" style={loginFormStyle.inputIcon}>lock</FontIcon>
+                        <TextField
+                            hintText="סיסמא"
+                            type="password"
+                            fullWidth={true}
+                            underlineShow={false}
+                            value={password}
+                            onChange={(event, password) => passwordChange(password)}
+                        />
+                    </div>
+                </Paper>
+                <RaisedButton type="submit" label="התחבר" secondary={true} fullWidth={true}
+                              onTouchTap={() => login(username, password)}/>
+            </div>
             <div className="commander-warning-container">
                 <span className="login-warning-message">זכור! נא לפעול לי הוראות בטחון שדה!</span>
             </div>

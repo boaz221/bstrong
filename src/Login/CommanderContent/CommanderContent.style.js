@@ -8,5 +8,8 @@ export default {
     actions:{
         direction: "rtl",
         textAlign: "left"
+    },
+    openContentButton:{
+        boxShadow: "1px 1px 10px black"
     }
 }

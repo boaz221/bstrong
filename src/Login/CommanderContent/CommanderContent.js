@@ -30,7 +30,7 @@ class CommanderContent extends Component {
         return (
             <div className="commander-content-container">
                 <RaisedButton label="דבר המפקד" fullWidth={true}
-                              onTouchTap={() => this.openDialog()}/>
+                              onTouchTap={() => this.openDialog()} style={commanderContentStyle.openContentButton}/>
                 <Dialog
                     title="דבר המפקד"
                     actions={actions}
@@ -67,6 +67,7 @@ class CommanderContent extends Component {
                         <br/>
                         מדובר בפורטל שניתן להכניס אליו חומר בלתי מסווג <b>בלבד&nbsp;</b>
                         ולכן יש לשמור על רמת הסיווג, אין להכניס דוגמאות קונקרטיות, אין להשאיר שום פרט מזהה - לכל חייל ינתן שם משתמש וסיסמא אישית וכך נוכל לדעת מי הכותב.
+                        <br/>
                         יש להשמע להוראות ב"ש כפי שהעביר לכם קב"מ היחידה.
                     </p>
                 </Dialog>

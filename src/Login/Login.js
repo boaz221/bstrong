@@ -4,9 +4,11 @@ import {Redirect,} from 'react-router-dom'
 import Snackbar from 'material-ui/Snackbar';
 
 import './Login.css';
+import logo from '../App/logo.png'
 import loginStyle from './Login.css.js';
 import loginProxy from './Login.proxy.js';
 import LoginForm from './LoginForm/LoginForm';
+import suiteLogo from '../App/be-strong-suite.jpg';
 import LoginSessionService from './LoginSession.service.js';
 
 const SessionService = new LoginSessionService();
@@ -38,6 +40,10 @@ export default class Login extends Component {
 
         return (
             <div className="login page-container">
+                <div className="login-page-logos">
+                    <img className="login-logo" src={logo} alt="logo"/>
+                    <img className="login-suit-logo" src={suiteLogo} alt="logo"/>
+                </div>
                 <LoginForm passwordChange={(password) => this.setState({password})}
                            usernameChange={(username) => this.setState({username})}
                            login={(...args) => this.login(...args)}

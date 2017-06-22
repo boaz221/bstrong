@@ -33,5 +33,5 @@
     "start": "cross-env NODE_ENV=production PORT=80 npm run server",
     "postinstall": "npm run build"
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:3002"
 }
